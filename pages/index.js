@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Navbar from '../partials/navBar';
-import HelloWorld from '../components/helloWorld';
+import Navbar from '../partials/navbar';
+import HelloWorld from '../components';
 
 import '../styles/index.scss';
 

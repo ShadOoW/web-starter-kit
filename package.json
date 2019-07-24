@@ -1,7 +1,7 @@
 {
-  "name": "hawky",
+  "name": "web-starter-kit",
   "version": "1.0.0",
-  "description": "a video news aggregator",
+  "description": "A starter kit based on NextJs",
   "main": "index.js",
   "dependencies": {
     "bootstrap-scss": "^4.3.1",
@@ -11,19 +11,26 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@testing-library/jest-dom": "^4.0.0",
+    "@testing-library/react": "^8.0.6",
     "@zeit/next-sass": "^1.0.1",
+    "babel-jest": "^24.8.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
+    "jest": "^24.8.0",
+    "jest-transform-css": "^2.0.0",
     "node-sass": "^4.12.0"
   },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --color"
+    "lint": "eslint . --color",
+    "test": "jest"
   },
   "author": "Younes El Alami",
   "license": "ISC"
