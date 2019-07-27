@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   webpack(config) {
     config.module.rules.push({
@@ -14,6 +16,8 @@ module.exports = {
         }
       ]
     });
+
+    config.resolve.modules.push(path.resolve('./src'));
 
     return config;
   },
