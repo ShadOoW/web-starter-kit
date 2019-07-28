@@ -2,14 +2,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import HelloWorld from './helloWorld';
+import HelloWorld from '../src/components/helloWorld/helloWorld';
 
 describe('Dummy test for HelloWorld Component', () => {
   let props;
 
   beforeEach(() => {
     props = {
-      name: 'Younes',
+      name: 'World!',
     };
   });
 

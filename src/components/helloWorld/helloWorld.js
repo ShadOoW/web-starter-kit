@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import H1 from '../../typography';
+
 function HelloWorld({ name }) {
   return (
     <div>
-      Hello <b>{name}</b>, Welcome to Next.js!
+      <H1 pt={[4, 6]}> Hello <b>{name}</b></H1>
+      Welcome to Next.js!
     </div>
   );
 }

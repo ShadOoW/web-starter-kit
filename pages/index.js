@@ -1,16 +1,20 @@
 import React from 'react';
 
-import Navbar from '../partials/navbar';
-import HelloWorld from '../components';
+// Layout
+import Container from '../src/layout/container';
+import Content from '../src/layout/content';
 
-import '../styles/index.scss';
+import Header from '../src/partials';
+import HelloWorld from '../src/components';
 
 function Home() {
   return (
-    <div className="container">
-      <Navbar />
-      <HelloWorld name="Younes" />
-    </div>
+    <Container>
+      <Header />
+      <Content>
+        <HelloWorld name="World!" />
+      </Content>
+    </Container>
   );
 }
 
