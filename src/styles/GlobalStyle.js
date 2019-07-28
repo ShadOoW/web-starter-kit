@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
         background-color: var(--color-background);
         color: var(--color-foreground);
         font-size: ${({ theme }) => theme.fontSizes.base};
-        font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+        font-family: monospace,monospace;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
@@ -53,6 +53,9 @@ const GlobalStyle = createGlobalStyle`
         font-size: ${p => p.theme.fontSizes.h6};
     }
     h1, h2, h3, h4, h5, h6 {
+      font-weight: bold;
+    }
+    h1, h2, h3, h4, h5, h6, ul {
       margin-block-start: 0;
       margin-block-end: 0;
     }
@@ -64,6 +67,14 @@ const GlobalStyle = createGlobalStyle`
     img {
         width: 100%;
         vertical-align: bottom;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+    ul {
+      list-style: none;
     }
 `;
 

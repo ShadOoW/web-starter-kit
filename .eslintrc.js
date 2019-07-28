@@ -21,7 +21,8 @@ module.exports = {
   ],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-one-expression-per-line": [0]
+    "react/jsx-one-expression-per-line": [0],
+    "jsx-quotes": ["error", "prefer-single"]
   },
   "settings": {
     "import/resolver": {
