@@ -1,8 +1,9 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../src/styles/GlobalStyle';
-import { theme } from '../src/styles/theme';
+
+import GlobalStyle from 'styles/GlobalStyle';
+import { theme } from 'styles/theme';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

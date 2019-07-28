@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import H1 from '../../typography';
+import H1 from 'typography';
 
 function HelloWorld({ name }) {
   return (

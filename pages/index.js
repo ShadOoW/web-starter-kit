@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Layout
-import Container from '../src/layout/container';
-import Content from '../src/layout/content';
+import Container from 'layout/container';
+import Content from 'layout/content';
 
-import Header from '../src/partials';
-import HelloWorld from '../src/components';
+import Header from 'partials';
+import HelloWorld from 'components';
 
 function Home() {
   return (
