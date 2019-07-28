@@ -1,26 +1,37 @@
 import { normalize } from 'polished';
 import { createGlobalStyle } from 'styled-components';
-import { lineHight } from './theme';
+import { lineHight, darkColorsTheme, lightColorsTheme } from './theme';
 
 const GlobalStyle = createGlobalStyle`
     ${normalize()}
     html {
-        box-sizing: border-box;
-        font-size: ${p => p.theme.fontSizes.init};
+      box-sizing: border-box;
+      font-size: ${p => p.theme.fontSizes.init};
+
+      --color-background: ${lightColorsTheme.colors.background};
+      --color-backgroundAccent: ${lightColorsTheme.colors.backgroundAccent};
+      --color-foreground: ${lightColorsTheme.colors.foreground};
+      --color-foregroundAccent: ${lightColorsTheme.colors.foregroundAccent};
+
+      &.dark {
+        --color-background: ${darkColorsTheme.colors.background};
+        --color-backgroundAccent: ${darkColorsTheme.colors.backgroundAccent};
+        --color-foreground: ${darkColorsTheme.colors.foreground};
+        --color-foregroundAccent: ${darkColorsTheme.colors.foregroundAccent};
+      }
     }
     *, *:before, *:after {
         box-sizing: inherit;
     }
     body {
-        background-color: ${({ theme }) => theme.colors.dark};
-        color: ${({ theme }) => theme.colors.light};
+        background-color: var(--color-background);
+        color: var(--color-foreground);
         font-size: ${({ theme }) => theme.fontSizes.base};
         font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
         text-align: center;
-        transition: background-color 0.5s;
         line-height: ${lineHight}
     }
     h1 {
@@ -46,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
       margin-block-end: 0;
     }
     a, a:link, a:visited, a:focus, a:hover, a:active {
-        color: ${p => p.theme.colors.light};
+        color: var(--color-foreground);
         text-decoration:none;
         cursor: pointer;
     }

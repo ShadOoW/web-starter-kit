@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { space } from 'styled-system';
 
 const Content = styled.nav`
   display: flex;
@@ -6,11 +7,7 @@ const Content = styled.nav`
   flex: 1 auto;
   align-items: center;
   justify-content: center;
-  margin-bottom: ${({ theme }) => theme.space.quadruple};
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.small}) {
-    margin: 50px 0;
-  }
+  ${space}
 `;
 
 export default Content;

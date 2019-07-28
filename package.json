@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "next": "^9.0.2",
+    "nookies": "^2.0.8",
     "polished": "^3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
