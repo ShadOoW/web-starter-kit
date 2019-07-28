@@ -13,6 +13,7 @@ function Home() {
       <Header />
       <Content py={[2, 5]}>
         <HelloWorld name='World!' />
+        {process.env.env}
       </Content>
     </Container>
   );
