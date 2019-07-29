@@ -1,6 +1,9 @@
 const path = require('path')
 
 module.exports = {
+  env: {
+    env: 'dev',
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
