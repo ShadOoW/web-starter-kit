@@ -59,12 +59,14 @@ const Menu = () => {
           px={[2, 0]}
         >
           <Flex
+            as='li'
             mx={[0, 3]}
             p={[2, 0]}
           >
             <a href='/about'>About</a>
           </Flex>
           <Flex
+            as='li'
             mx={[0, 3]}
             p={[2, 0]}
           >

@@ -5,4 +5,5 @@ module.exports = {
     '^.+\\.js$': 'babel-jest',
     '\\.svg$': '<rootDir>/jest/fileTransformer.js',
   },
+  moduleDirectories: ['node_modules', 'src'],
 };
