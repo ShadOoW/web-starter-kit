@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+/* eslint-disable no-unused-expressions */
+import React, { useState, useEffect } from 'react';
+import { parseCookies, setCookie } from 'nookies';
 import styled from 'styled-components';
 
 import BurgerIcon from './burger.svg';
 import ThemeTogglerIcon from './theme-toggler.svg';
 
 const Nav = styled.nav`
-  background-color: ${({ theme }) => theme.colors.darker};
   align-self: baseline;
   border-right: 1px solid;
   margin-right: 18px;
@@ -62,19 +63,33 @@ const BurgerIconWrapper = styled(IconWrapper)`
 `;
 
 const Menu = () => {
+  const cookieTheme = parseCookies().theme;
+
   const [hide, toggleHide] = useState(true);
+  const [actualTheme, setActualTheme] = useState(cookieTheme || 'light');
+
+  useEffect(() => {
+    setCookie({}, 'theme', actualTheme);
+
+    document.getElementsByTagName('html')[0].className = actualTheme;
+  }, [actualTheme]);
+
+  const toggleTheme = () => {
+    setActualTheme(actualTheme === 'light' ? 'dark' : 'light');
+  };
+
   return (
     <>
-      <Nav className={hide ? 'hidden' : 'shown'} hide={hide} data-testid="nav">
+      <Nav hide={hide} data-testid="nav">
         <UL>
-          <LI>About</LI>
+          <LI><a href="/about">About</a></LI>
           <LI>Posts</LI>
         </UL>
       </Nav>
-      <BurgerIconWrapper onClick={() => toggleHide(!hide)} data-testid="burger">
+      <BurgerIconWrapper onClick={() => toggleHide()} data-testid="burger">
         <BurgerIcon width={24} height={24} />
       </BurgerIconWrapper>
-      <IconWrapper data-testid="theme-toggler">
+      <IconWrapper onClick={() => toggleTheme()} data-testid="theme-toggler">
         <ThemeTogglerIcon width={24} height={24} />
       </IconWrapper>
     </>

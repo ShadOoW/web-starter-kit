@@ -1,6 +1,9 @@
 import React from 'react';
-import Document from 'next/document';
+import Document, {
+  Html, Head, Main, NextScript,
+} from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import { parseCookies } from 'nookies';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -13,6 +16,10 @@ export default class MyDocument extends Document {
       });
 
       const initialProps = await Document.getInitialProps(ctx);
+
+      const cookies = parseCookies(ctx);
+      initialProps.theme = cookies.theme;
+
       return {
         ...initialProps,
         styles: (
@@ -25,5 +32,17 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render() {
+    return (
+      <Html className={this.props.theme}>
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }

@@ -5,7 +5,7 @@ import Logo from './logo';
 import Menu from './menu';
 
 const Wapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.darker};
+  background-color: var(--color-backgroundAccent);
   display: flex;
   align-items: center;
   justify-content: center;
