@@ -1,26 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
 
+import { Flex } from 'layout';
+import { H3 } from 'typography';
 import Cursor from './cursor';
 
-const CommandLine = styled.div`
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-size: ${({ theme }) => theme.fontSizes.big};
-  font-weight: 700;
-  font-family: monospace, monospace;
-`;
-
-const Mark = styled.span`
-  margin-left: ${({ theme }) => theme.space[2]};
-`;
-
 const Logo = () => (
-  <CommandLine>
-    ~/web-starter-kit<Mark>&gt;</Mark>
+  <Flex
+    alignItems='center'
+  >
+    <H3>~/web-starter-kit &gt;</H3>
     <Cursor />
-  </CommandLine>
+  </Flex>
 );
 
 export default Logo;

@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import { space, typography } from 'styled-system';
 
-const H1 = styled.h1`
+const H3 = styled.h3`
   ${space}
   ${typography}
 `;
 
-H1.propTypes = {
+H3.propTypes = {
   ...space.propTypes,
   ...typography.propTypes,
 };
 
-H1.defaultProps = {
-  py: 3,
+H3.defaultProps = {
+  py: 1,
 };
 
-export default H1;
+export default H3;

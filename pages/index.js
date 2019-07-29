@@ -12,7 +12,7 @@ function Home() {
     <Container>
       <Header />
       <Content py={[2, 5]}>
-        <HelloWorld name="World!" />
+        <HelloWorld name='World!' />
       </Content>
     </Container>
   );

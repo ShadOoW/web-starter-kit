@@ -21,6 +21,13 @@ export const breakpointLarge = '1200px';
 export const breakpointMedium = '920px';
 export const breakpointSmall = '640px';
 
+export const cssVarColorsNames = {
+  background: 'var(--color-background)',
+  backgroundAccent: 'var(--color-backgroundAccent)',
+  foreground: 'var(--color-foreground)',
+  foregroundAccent: 'var(--color-foregroundAccent)',
+};
+
 export const lineHight = 1.54;
 
 export const darkColorsTheme = {
@@ -43,6 +50,7 @@ export const lightColorsTheme = {
 
 const theme = {
   space: ['0', '.25rem', '.5rem', '1rem', '2rem', '4rem', '8rem'],
+  sizes: { small: 640, medium: 920, large: 1200 },
   fontSizes: {
     init: fontSizeInit,
     base: fontSizeBase,
@@ -59,6 +67,7 @@ const theme = {
   borders: { basic: 'solid .125rem' },
   breakpoints: [breakpointSmall, breakpointMedium, breakpointLarge],
   radii: { pill: '9999px' },
+  zIndex: 9999,
   textStyles: {
     active: {
       fontSize: fontSizeBig,

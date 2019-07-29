@@ -4,6 +4,9 @@ import React from 'react';
 import Container from 'layout/container';
 import Content from 'layout/content';
 
+// Typography
+import { H1 } from 'typography';
+
 import Header from 'partials';
 
 function Home() {
@@ -11,7 +14,7 @@ function Home() {
     <Container>
       <Header />
       <Content py={[2, 5]}>
-        About Page
+        <H1 pt={[4, 6]}>About Page</H1>
       </Content>
     </Container>
   );
