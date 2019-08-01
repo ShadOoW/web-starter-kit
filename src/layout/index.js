@@ -1,9 +1,7 @@
 import Flex from './flex';
-import Content from './content';
-import Container from './container';
+import Div from './div';
 
 export {
   Flex,
-  Content,
-  Container,
+  Div,
 };

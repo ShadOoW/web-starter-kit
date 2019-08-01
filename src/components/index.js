@@ -1,1 +1,5 @@
-export { default } from './helloWorld';
+import GraphqlDemo from './graphql-demo';
+
+export {
+  GraphqlDemo,
+};

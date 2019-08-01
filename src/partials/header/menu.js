@@ -65,13 +65,6 @@ const Menu = () => {
           >
             <a href='/about'>About</a>
           </Flex>
-          <Flex
-            as='li'
-            mx={[0, 3]}
-            p={[2, 0]}
-          >
-            Posts
-          </Flex>
         </Flex>
       </Flex>
       <IconButton

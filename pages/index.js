@@ -1,22 +1,47 @@
 import React from 'react';
 
-// Layout
-import Container from 'layout/container';
-import Content from 'layout/content';
+import withData from 'lib/apollo';
 
-import Header from 'partials';
-import HelloWorld from 'components';
+// Layout
+import { Flex, Div } from 'layout';
+
+// Parials
+import { Header } from 'partials';
+
+// Components
+import { GraphqlDemo } from 'components';
+
+// Typography
+import { H2 } from 'typography';
 
 function Home() {
   return (
-    <Container>
+    <Flex
+      flexDirection='column'
+    >
       <Header />
-      <Content py={[2, 5]}>
-        <HelloWorld name='World!' />
-        {process.env.env}
-      </Content>
-    </Container>
+      <Flex
+        p={[2, 4]}
+        flexDirection='column'
+        alignItems='center'
+        justifyContent='center'
+      >
+        <Div maxWidth='large' width='100%'>
+          <H2>What is this?</H2>
+          <p>
+            This is a demo website, to showcase a nextjs starter kit in action.<br />
+            Read more about it in the <a href='/about'>about page</a>, or on <a href='https://github.com/ShadOoW/web-starter-kit'>github</a>
+          </p>
+          <H2 pt={[4, 5]}>Rick and Mory</H2>
+          <p>
+            This is a demo for apollo and graphql<br />
+            The graphql backend is generously made available by <a href='https://rickandmortyapi.com/'>Axel Fuhrmann</a>
+          </p>
+          <GraphqlDemo />
+        </Div>
+      </Flex>
+    </Flex>
   );
 }
 
-export default Home;
+export default withData(Home);
