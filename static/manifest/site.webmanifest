@@ -1,0 +1,19 @@
+{
+  "name": "Web Starter Kit",
+  "short_name": "Web Starter Kit",
+  "icons": [
+    {
+      "src": "/static/manifest/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/manifest/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#fe5186",
+  "background_color": "#fe5186",
+  "display": "fullscreen"
+}
