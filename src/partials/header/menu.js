@@ -16,7 +16,6 @@ import ThemeTogglerIcon from './theme-toggler.svg';
 
 const IconButton = styled.button`
   background: ${cssVarColorsNames.backgroundAccent};
-  color: ${cssVarColorsNames.foreground};
   margin-right: ${({ theme }) => theme.space[3]};
   ${display}
 `;
@@ -42,6 +41,7 @@ const Menu = () => {
       <Flex
         as='nav'
         bg={cssVarColorsNames.backgroundAccent}
+        color={cssVarColorsNames.foregroundAccent}
         display={[hide ? 'none' : 'flex', 'flex']}
         px={4}
         mr={[0, 3]}

@@ -65,6 +65,9 @@ const GlobalStyle = createGlobalStyle`
         text-decoration:none;
         cursor: pointer;
     }
+    button {
+      color: var(--color-foregroundAccent);
+    }
     img {
         width: 100%;
         vertical-align: bottom;
