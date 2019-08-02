@@ -1,22 +1,31 @@
 import React from 'react';
 
 // Layout
-import Container from 'layout/container';
-import Content from 'layout/content';
+import { Flex, Div } from 'layout';
 
 // Typography
 import { H1 } from 'typography';
 
-import Header from 'partials';
+// Import Partials
+import { Header } from 'partials';
 
 function Home() {
   return (
-    <Container>
+    <Flex
+      flexDirection='column'
+    >
       <Header />
-      <Content py={[2, 5]}>
-        <H1 pt={[4, 6]}>About Page</H1>
-      </Content>
-    </Container>
+      <Flex
+        p={[2, 4]}
+        flexDirection='column'
+        alignItems='center'
+        justifyContent='center'
+      >
+        <Div maxWidth='large' width='100%'>
+          <H1 pt={[4, 6]}>About Page</H1>
+        </Div>
+      </Flex>
+    </Flex>
   );
 }
 

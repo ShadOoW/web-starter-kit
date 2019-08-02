@@ -13,7 +13,7 @@ const Header = () => (
   >
     <Flex
       justifyContent='space-between'
-      width='medium'
+      width='large'
       maxWidth='100%'
       m='auto'
     >
@@ -21,9 +21,7 @@ const Header = () => (
         <Logo />
       </a>
       <Flex flexDirection={['row-reverse', 'row']}>
-        <Menu>
-          Test
-        </Menu>
+        <Menu />
       </Flex>
     </Flex>
   </Flex>

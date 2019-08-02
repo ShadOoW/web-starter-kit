@@ -10,13 +10,15 @@ export const fontSizeH2 = '2rem';
 export const darkBackgroundAccent = '#252627';
 export const darkBackground = '#292a2d';
 export const darkForeground = '#a9a9b3';
-export const darkForegroundAccent = '#fe5186';
 
 export const lightBackgroundAccent = '#fafafa';
 export const lightBackground = '#fff';
 export const lightForeground = '#222';
-export const lightForegroundAccent = '#fe5186';
 
+export const foregroundAccent = '#00afc7';
+export const foregroundError = '#F45B69';
+
+export const breakpointLarger = '1201px';
 export const breakpointLarge = '1200px';
 export const breakpointMedium = '920px';
 export const breakpointSmall = '640px';
@@ -26,6 +28,7 @@ export const cssVarColorsNames = {
   backgroundAccent: 'var(--color-backgroundAccent)',
   foreground: 'var(--color-foreground)',
   foregroundAccent: 'var(--color-foregroundAccent)',
+  foregroundError: 'var(--color-foregroundError)',
 };
 
 export const lineHight = 1.54;
@@ -35,7 +38,8 @@ export const darkColorsTheme = {
     background: darkBackground,
     backgroundAccent: darkBackgroundAccent,
     foreground: darkForeground,
-    foregroundAccent: darkForegroundAccent,
+    foregroundAccent,
+    foregroundError,
   },
 };
 
@@ -44,7 +48,8 @@ export const lightColorsTheme = {
     background: lightBackground,
     backgroundAccent: lightBackgroundAccent,
     foreground: lightForeground,
-    foregroundAccent: lightForegroundAccent,
+    foregroundAccent,
+    foregroundError,
   },
 };
 
@@ -65,7 +70,7 @@ const theme = {
     h6: fontSizeSmall,
   },
   borders: { basic: 'solid .125rem' },
-  breakpoints: [breakpointSmall, breakpointMedium, breakpointLarge],
+  breakpoints: [breakpointSmall, breakpointMedium, breakpointLarge, breakpointLarger],
   radii: { pill: '9999px' },
   zIndex: 9999,
   textStyles: {

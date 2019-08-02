@@ -12,12 +12,14 @@ const GlobalStyle = createGlobalStyle`
       --color-backgroundAccent: ${lightColorsTheme.colors.backgroundAccent};
       --color-foreground: ${lightColorsTheme.colors.foreground};
       --color-foregroundAccent: ${lightColorsTheme.colors.foregroundAccent};
+      --color-foregroundError: ${lightColorsTheme.colors.foregroundError};
 
       &.dark {
         --color-background: ${darkColorsTheme.colors.background};
         --color-backgroundAccent: ${darkColorsTheme.colors.backgroundAccent};
         --color-foreground: ${darkColorsTheme.colors.foreground};
         --color-foregroundAccent: ${darkColorsTheme.colors.foregroundAccent};
+        --color-foregroundError: ${darkColorsTheme.colors.foregroundError};
       }
     }
     *, *:before, *:after {
@@ -31,7 +33,6 @@ const GlobalStyle = createGlobalStyle`
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
-        text-align: center;
         line-height: ${lineHight}
     }
     h1 {
@@ -55,12 +56,12 @@ const GlobalStyle = createGlobalStyle`
     h1, h2, h3, h4, h5, h6 {
       font-weight: bold;
     }
-    h1, h2, h3, h4, h5, h6, ul {
+    h1, h2, h3, h4, h5, h6, ul, p {
       margin-block-start: 0;
       margin-block-end: 0;
     }
     a, a:link, a:visited, a:focus, a:hover, a:active {
-        color: var(--color-foreground);
+        color: var(--color-foregroundAccent);
         text-decoration:none;
         cursor: pointer;
     }
@@ -75,6 +76,10 @@ const GlobalStyle = createGlobalStyle`
     }
     ul {
       list-style: none;
+    }
+    input[type=text] {
+      width: 100%;
+      padding: 1rem 2rem;
     }
 `;
 

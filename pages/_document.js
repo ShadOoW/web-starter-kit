@@ -47,6 +47,8 @@ export default class MyDocument extends Document {
           <meta name='application-name' content='Web Starter Kit' />
           <meta name='msapplication-TileColor' content='#da532c' />
           <meta name='theme-color' content='#fe5186' />
+
+          <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         </Head>
         <body>
           <Main />
