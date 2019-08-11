@@ -8,6 +8,7 @@ import Menu from './menu';
 const Header = () => (
   <Flex
     bg={cssVarColorsNames.backgroundAccent}
+    color={cssVarColorsNames.foregroundAccent}
     p={4}
     position='relative'
   >

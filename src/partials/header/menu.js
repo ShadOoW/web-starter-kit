@@ -1,8 +1,6 @@
 // Libraries
 import React, { useState, useEffect } from 'react';
 import { parseCookies, setCookie } from 'nookies';
-import styled from 'styled-components';
-import { display } from 'styled-system';
 
 // Theme
 import { cssVarColorsNames } from 'styles/theme';
@@ -13,12 +11,6 @@ import { Flex } from 'layout';
 // SVG Ions
 import BurgerIcon from './burger.svg';
 import ThemeTogglerIcon from './theme-toggler.svg';
-
-const IconButton = styled.button`
-  background: ${cssVarColorsNames.backgroundAccent};
-  margin-right: ${({ theme }) => theme.space[3]};
-  ${display}
-`;
 
 const Menu = () => {
   const cookieTheme = parseCookies().theme;
@@ -41,10 +33,9 @@ const Menu = () => {
       <Flex
         as='nav'
         bg={cssVarColorsNames.backgroundAccent}
-        color={cssVarColorsNames.foregroundAccent}
         display={[hide ? 'none' : 'flex', 'flex']}
         px={4}
-        mr={[0, 3]}
+        mr={[0, 4]}
         position={['absolute', 'relative']}
         top={[70, 0]}
         right={0}
@@ -67,17 +58,23 @@ const Menu = () => {
           </Flex>
         </Flex>
       </Flex>
-      <IconButton
-        display={['block', 'none']}
+      <Flex
+        backgroundColor={cssVarColorsNames.backgroundAccent}
+        mr={3}
+        display={['flex', 'none']}
         onClick={() => toggleHide(!hide)}
+        alignItems='center'
       >
         <BurgerIcon width={24} height={24} />
-      </IconButton>
-      <IconButton
+      </Flex>
+      <Flex
+        mr={3}
+        backgroundColor={cssVarColorsNames.backgroundAccent}
         onClick={() => toggleTheme()}
+        alignItems='center'
       >
         <ThemeTogglerIcon width={24} height={24} />
-      </IconButton>
+      </Flex>
     </>
   );
 };

@@ -22,7 +22,7 @@ function Home() {
         justifyContent='center'
       >
         <Div maxWidth='large' width='100%'>
-          <H1 pt={[4, 6]}>About Page</H1>
+          <H1 pt={[2, 4]}>About Page</H1>
         </Div>
       </Flex>
     </Flex>

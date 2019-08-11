@@ -10,7 +10,7 @@ function FilterInput({ onChange }) {
       onChange={event => onChange(event.target.value)}
       placeholder='Filter by name (ex: Rick, Morty, Robot)'
       aria-label='filter-input'
-      maxlength={20}
+      maxLength={20}
     />
   );
 }
