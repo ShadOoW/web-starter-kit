@@ -11,9 +11,9 @@ const blink = keyframes`
 
 const Cursor = styled.div`
   background: var(--color-foregroundAccent);
-  margin-left: ${props => props.theme.space[2]};
-  width: ${props => props.theme.space[3]};
-  height: ${props => props.theme.space[4]};
+  margin-left: ${(props) => props.theme.space[2]};
+  width: ${(props) => props.theme.space[3]};
+  height: ${(props) => props.theme.space[4]};
   animation: 1.5s ${blink} infinite;
 `;
 

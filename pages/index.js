@@ -1,7 +1,5 @@
 import React from 'react';
 
-import withData from 'lib/apollo';
-
 // Layout
 import { Flex, Div } from 'layout';
 
@@ -44,4 +42,4 @@ function Home() {
   );
 }
 
-export default withData(Home);
+export default Home;

@@ -18,7 +18,7 @@ function Characters({ characters }) {
       flexWrap='wrap'
       mx={-2}
     >
-      {characters.map(character => (
+      {characters.map((character) => (
         <Flex
           p={2}
           width={['100%', '50%', '33.3%', '25%']}
