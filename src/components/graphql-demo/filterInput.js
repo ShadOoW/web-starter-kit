@@ -1,22 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { DebounceInput } from 'react-debounce-input';
 
-function FilterInput({ onChange }) {
+import useDebounce from 'utils/use-debounce';
+
+function FilterInput({ onChange, placeholder }) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
+  useEffect(
+    () => {
+      onChange(debouncedSearchTerm);
+    },
+    [debouncedSearchTerm],
+  );
+
   return (
-    <DebounceInput
-      minLength={2}
-      debounceTimeout={300}
-      onChange={event => onChange(event.target.value)}
-      placeholder='Filter by name (ex: Rick, Morty, Robot)'
-      aria-label='filter-input'
-      maxLength={20}
+    <input
+      type='text'
+      placeholder={placeholder}
+      onChange={(e) => setSearchTerm(e.target.value)}
     />
   );
 }
 
+FilterInput.defaultProps = {
+  placeholder: '',
+};
+
 FilterInput.propTypes = {
   onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
 };
 
 export default FilterInput;

@@ -1,7 +1,6 @@
 // Import Dependencies
 import React, { useState } from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
+import { useQuery } from 'graphql-hooks';
 
 // Import Layout
 import { Flex, Div } from 'layout';
@@ -15,7 +14,7 @@ import Characters from './characters';
 import Error from './error';
 
 // https://rickandmortyapi.com/documentation/#character
-const GET_CHARACTERS = gql`
+export const GET_CHARACTERS = `
   query Characters($name: String) {
     characters(page: 1, filter: { name: $name }) {
       info {
@@ -44,7 +43,10 @@ function GraphqlDemo() {
   return (
     <Flex flexDirection='column'>
       <Div py={4} maxWidth='small'>
-        <FilterInput onChange={value => setSearchInputValue(value)} />
+        <FilterInput
+          placeholder='Filter by name (ex: Rick, Morty, Robot)'
+          onChange={(value) => setSearchInputValue(value)}
+        />
       </Div>
 
       {error && (
@@ -61,7 +63,9 @@ function GraphqlDemo() {
       )}
 
       <Flex justifyContent='center' py={[3, 4]}>
-        <Div width='50%' maxWidth={300}><img src='/static/images/placeholder.png' alt='rick and morty' /></Div>
+        <Div width='50%' maxWidth={300}>
+          <img src='/static/images/placeholder.png' alt='rick and morty' />
+        </Div>
       </Flex>
     </Flex>
   );
