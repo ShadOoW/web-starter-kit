@@ -1,3 +1,5 @@
-import Loader from './loader';
+import Spinner from './spinner';
 
-export default Loader;
+export {
+  Spinner,
+};

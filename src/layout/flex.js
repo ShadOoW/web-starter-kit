@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  layout, flexbox, color, space, position, border,
+  layout, flexbox, color, space, position, border, typography,
 } from 'styled-system';
 
 const Flex = styled.div`
@@ -11,6 +11,7 @@ const Flex = styled.div`
   ${space}
   ${position}
   ${border}
+  ${typography}
 `;
 
 Flex.propTypes = {
@@ -20,6 +21,7 @@ Flex.propTypes = {
   ...space.propTypes,
   ...position.propTypes,
   ...border.propTypes,
+  ...typography.propTypes,
 };
 
 Flex.defaultProps = {

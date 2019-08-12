@@ -5,9 +5,6 @@ import { useQuery } from 'graphql-hooks';
 // Import Layout
 import { Flex, Div } from 'layout';
 
-// Import Components
-import { Loader } from 'common';
-
 // Import Sub Components
 import FilterInput from './filterInput';
 import Characters from './characters';
@@ -46,15 +43,12 @@ function GraphqlDemo() {
         <FilterInput
           placeholder='Filter by name (ex: Rick, Morty, Robot)'
           onChange={(value) => setSearchInputValue(value)}
+          isLoading={loading}
         />
       </Div>
 
       {error && (
         <Error />
-      )}
-
-      {loading && (
-        <Loader />
       )}
 
       {!loading && data && data.characters && (
