@@ -38,8 +38,10 @@ function Characters({ characters }) {
             backgroundColor='var(--color-backgroundAccent)'
             width='100%'
             py={3}
+            px={4}
             bottom={0}
             opacity={0.8}
+            textAlign='center'
           >
             <h2>
               {character.name}
