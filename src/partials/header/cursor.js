@@ -1,18 +1,20 @@
 /* eslint-disable no-unused-vars */
 import styled, { keyframes } from 'styled-components';
 
-const blink = props => keyframes`
+import { cssVarColorsNames } from 'styles/theme';
+
+const blink = keyframes`
   0% {background: transparent}
-  50% {background: var(--color-foregroundAccent)}
+  50% {background: ${cssVarColorsNames.foregroundAccent}}
   100% {background: transparent}
 `;
 
-const Cursor = styled.span`
+const Cursor = styled.div`
   background: var(--color-foregroundAccent);
-  margin-left: ${({ theme }) => theme.space[2]};
-  width: ${({ theme }) => theme.space[3]};
-  height: ${({ theme }) => theme.space[4]};
-  animation: ${props => blink} 1.5s infinite;
+  margin-left: ${props => props.theme.space[2]};
+  width: ${props => props.theme.space[3]};
+  height: ${props => props.theme.space[4]};
+  animation: 1.5s ${blink} infinite;
 `;
 
 export default Cursor;
