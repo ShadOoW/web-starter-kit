@@ -19,6 +19,8 @@ export default class MyDocument extends Document {
 
       const cookies = parseCookies(ctx);
       initialProps.theme = cookies.theme;
+      initialProps.language = cookies['next-i18next'] || 'en';
+      initialProps.direction = initialProps.language === 'ar' ? 'rtl' : 'ltr';
 
       return {
         ...initialProps,
@@ -35,8 +37,14 @@ export default class MyDocument extends Document {
   }
 
   render() {
+    const { theme, language, direction } = this.props;
+
     return (
-      <Html className={this.props.theme}>
+      <Html
+        className={theme}
+        lang={language}
+        dir={direction}
+      >
         <Head>
           <link rel='apple-touch-icon' sizes='180x180' href='/static/manifest/apple-touch-icon.png' />
           <link rel='icon' type='image/png' sizes='32x32' href='/static/manifest/favicon-32x32.png' />

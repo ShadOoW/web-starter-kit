@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { ClientContext } from 'graphql-hooks';
 
 import withGraphQLClient from 'lib/with-graphql-client';
+import { appWithTranslation } from 'lib/i18n';
 
 import GlobalStyle from 'styles/GlobalStyle';
 import theme from 'styles/theme';
@@ -37,4 +38,4 @@ class MyApp extends App {
   }
 }
 
-export default withGraphQLClient(MyApp);
+export default appWithTranslation(withGraphQLClient(MyApp));

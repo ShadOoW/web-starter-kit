@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { dir } from 'lib/styled-components-direction';
 
 // Import Components
 import { Spinner } from 'common';
 
 // Import Layout
-import { Flex, Div } from 'layout';
+import { Flex, Block } from 'layout';
 
 // Import Utils
 import { useDebounce } from 'utils';
+
+const SpinnerWrapper = styled.nav`
+  ${dir`
+    right: ${(props) => props.theme.space[4]};
+  `}
+`;
 
 function FilterInput({ onChange, placeholder, isLoading }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -31,16 +39,16 @@ function FilterInput({ onChange, placeholder, isLoading }) {
         placeholder={placeholder}
         onChange={(e) => (setSearchTerm(e.target.value))}
       />
-      <Div
+      <Block
+        as={SpinnerWrapper}
         position='absolute'
-        right={10}
         top={8}
         display={isLoading ? 'block' : 'none'}
         width={24}
         height={24}
       >
         <Spinner />
-      </Div>
+      </Block>
     </Flex>
   );
 }

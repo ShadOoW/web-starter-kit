@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Layout
-import { Flex, Div } from 'layout';
+import { Flex, Block } from 'layout';
 
 // Typography
 import { H1 } from 'typography';
@@ -21,9 +21,9 @@ function Home() {
         alignItems='center'
         justifyContent='center'
       >
-        <Div maxWidth='large' width='100%'>
+        <Block maxWidth='large' width='100%'>
           <H1 pt={[2, 4]}>About Page</H1>
-        </Div>
+        </Block>
       </Flex>
     </Flex>
   );

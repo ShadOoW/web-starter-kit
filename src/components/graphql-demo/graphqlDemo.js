@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useQuery } from 'graphql-hooks';
 
 // Import Layout
-import { Flex, Div } from 'layout';
+import { Flex, Block } from 'layout';
 
 // Import Sub Components
 import FilterInput from './filterInput';
@@ -39,13 +39,13 @@ function GraphqlDemo() {
 
   return (
     <Flex flexDirection='column'>
-      <Div py={4} maxWidth='small'>
+      <Block py={4} maxWidth='small'>
         <FilterInput
           placeholder='Filter by name (ex: Rick, Morty, Robot)'
           onChange={(value) => setSearchInputValue(value)}
           isLoading={loading}
         />
-      </Div>
+      </Block>
 
       {error && (
         <Error />
@@ -57,9 +57,9 @@ function GraphqlDemo() {
       )}
 
       <Flex justifyContent='center' py={[3, 4]}>
-        <Div width='50%' maxWidth={300}>
+        <Block width='50%' maxWidth={300}>
           <img src='/static/images/placeholder.png' alt='rick and morty' />
-        </Div>
+        </Block>
       </Flex>
     </Flex>
   );

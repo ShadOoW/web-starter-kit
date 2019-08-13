@@ -1,7 +1,9 @@
 import Flex from './flex';
-import Div from './div';
+import Inline from './inline';
+import Block from './block';
 
 export {
   Flex,
-  Div,
+  Inline,
+  Block,
 };
