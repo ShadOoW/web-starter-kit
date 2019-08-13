@@ -11,7 +11,6 @@
 
 <h3>Known Issues</h3>
 <ul>
-  <li>Demo fails to connect to graphql-server if adblock is installed.</li>
   <li>
     Server side console error
     <code>

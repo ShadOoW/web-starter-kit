@@ -7,7 +7,7 @@ let graphQLClient = null;
 function create(initialState = {}) {
   return new GraphQLClient({
     ssrMode: typeof window === 'undefined',
-    url: 'https://rickandmortyapi.com/graphql/',
+    url: 'https://rickandmortyapi.com/graphql',
     cache: memCache({ initialState }),
     fetch: typeof window !== 'undefined' ? fetch.bind() : unfetch, // eslint-disable-line
   });
