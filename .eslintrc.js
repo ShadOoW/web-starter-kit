@@ -25,6 +25,7 @@ module.exports = {
     "jsx-quotes": ["error", "prefer-single"],
     'import/prefer-default-export': "off",
     "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/anchor-is-valid": "off",
   },
   "settings": {
     "import/resolver": {

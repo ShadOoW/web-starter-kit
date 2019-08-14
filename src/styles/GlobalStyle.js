@@ -1,6 +1,9 @@
 import { normalize } from 'polished';
 import { createGlobalStyle } from 'styled-components';
-import { lineHight, darkColorsTheme, lightColorsTheme } from './theme';
+import { dir } from 'lib/styled-components-direction';
+import {
+  lineHight, darkColorsTheme, lightColorsTheme, cssVarColorsNames,
+} from './theme';
 
 const GlobalStyle = createGlobalStyle`
     ${normalize()}
@@ -74,8 +77,22 @@ const GlobalStyle = createGlobalStyle`
     }
     button {
       cursor: pointer;
-      border: none;
       outline: none;
+      border: solid 2px ${cssVarColorsNames.foregroundAccent};
+      border-radius: 10px;
+      background-color: ${cssVarColorsNames.backgroundAccent};
+      padding: ${(props) => props.theme.space[2]} ${(props) => props.theme.space[3]};
+
+      &:hover {
+        background-color: ${cssVarColorsNames.foregroundAccent};
+        color: #fff;
+      }
+
+      svg {
+        ${dir`
+          margin-right: ${(props) => props.theme.space[3]};
+        `}
+      }
     }
     ul {
       list-style: none;
