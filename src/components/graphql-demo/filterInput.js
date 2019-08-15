@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { dir } from 'lib/styled-components-direction';
 
 // Import Components
 import { Spinner } from 'common';
@@ -10,13 +8,7 @@ import { Spinner } from 'common';
 import { Flex, Block } from 'layout';
 
 // Import Utils
-import { useDebounce } from 'utils';
-
-const SpinnerWrapper = styled.nav`
-  ${dir`
-    right: ${(props) => props.theme.space[4]};
-  `}
-`;
+import { useDebounce, Direction } from 'utils';
 
 function FilterInput({ onChange, placeholder, isLoading }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -40,12 +32,13 @@ function FilterInput({ onChange, placeholder, isLoading }) {
         onChange={(e) => (setSearchTerm(e.target.value))}
       />
       <Block
-        as={SpinnerWrapper}
+        as={Direction}
         position='absolute'
         top={8}
         display={isLoading ? 'block' : 'none'}
         width={24}
         height={24}
+        dirRight={4}
       >
         <Spinner />
       </Block>

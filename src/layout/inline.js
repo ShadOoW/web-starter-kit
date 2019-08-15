@@ -3,21 +3,22 @@ import {
   layout, color, space, position,
 } from 'styled-system';
 
-const Block = styled.div`
+const Inline = styled.div`
+  display: inline;
   ${layout}
   ${color}
   ${space}
   ${position}
 `;
 
-Block.propTypes = {
+Inline.propTypes = {
   ...layout.propTypes,
   ...color.propTypes,
   ...space.propTypes,
   ...position.propTypes,
 };
 
-Block.defaultProps = {
+Inline.defaultProps = {
 };
 
-export default Block;
+export default Inline;
