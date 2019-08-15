@@ -1,25 +1,14 @@
 <p align="center">
+  <!-- https://shields.io/ -->
   <a href="https://circleci.com/gh/ShadOoW/web-starter-kit/tree/master" alt="CircleCI">
-    <img src="https://circleci.com/gh/ShadOoW/web-starter-kit/tree/master.svg?style=svg" />
+    <img src="https://img.shields.io/circleci/build/github/ShadOoW/web-starter-kit/master?style=for-the-badge&logo=circleci" />
   </a>
+  <!-- http://heroku-shields.herokuapp.com/ -->
   <a href="https://web-starter-kit-nextjs.herokuapp.com/" alt="Heroku">
-    <img src="https://heroku-badge.herokuapp.com/?app=web-starter-kit-nextjs" />
+    <img src="https://img.shields.io/badge/heroku-up-brightgreen.svg?style=for-the-badge&logo=heroku" />
   </a>
+
+  <img src="https://img.shields.io/github/package-json/dependency-version/ShadOoW/web-starter-kit/next?style=for-the-badge" />
 </p>
 
 <h3><a href="https://web-starter-kit-nextjs.herokuapp.com/" alt="Heroku">Demo</a></h3>
-
-<h3>Known Issues</h3>
-<ul>
-  <li>
-    Server side console error
-    <code>
-    	TypeError: Cannot read property '2' of undefined
-    </code>
-    caused by theme being undefined at server time
-    <code>
-    	props.theme.space[2]
-    </code>.
-    This error doesn't cause any UI/UX issues and I have no idea how to fix it :(
-  </li>
-<ul>
