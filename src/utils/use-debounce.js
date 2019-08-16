@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 // Our hook
-export default function useDebounce(value, delay) {
+const useDebounce = (value, delay) => {
   // State and setters for debounced value
   const [debouncedValue, setDebouncedValue] = useState(value);
 
@@ -32,4 +32,6 @@ export default function useDebounce(value, delay) {
   );
 
   return debouncedValue;
-}
+};
+
+export default useDebounce;

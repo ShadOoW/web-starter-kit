@@ -1,11 +1,12 @@
 // Libraries
 import React, { useState, useEffect } from 'react';
 import { parseCookies, setCookie } from 'nookies';
-import styled from 'styled-components';
-import { dir } from 'lib/styled-components-direction';
 
 // Theme
 import { cssVarColorsNames } from 'styles/theme';
+
+// Utils
+import { Direction } from 'utils';
 
 // Layout
 import { Flex } from 'layout';
@@ -16,14 +17,6 @@ import { Capitalize } from 'common';
 // SVG Ions
 import BurgerIcon from './burger.svg';
 import ThemeTogglerIcon from './theme-toggler.svg';
-
-const Dropdown = styled.nav`
-  ${dir`
-    right: 0;
-    border-right: 1px solid;
-    margin-right: ${(props) => props.theme.space[4]};
-  `}
-`;
 
 const Menu = () => {
   const cookieTheme = parseCookies().theme;
@@ -45,12 +38,16 @@ const Menu = () => {
   return (
     <>
       <Flex
-        as={Dropdown}
+        as={Direction}
+        forwardedAs='nav'
         bg={cssVarColorsNames.backgroundAccent}
         display={[hide ? 'none' : 'flex', 'flex']}
-        px={4}
         position={['absolute', 'relative']}
         top={[70, 0]}
+        dirRight='0'
+        dirBorderRight='1px solid'
+        dirMarginRight='1rem'
+        p={[3, 0]}
       >
         <Flex
           as='ul'
@@ -62,19 +59,21 @@ const Menu = () => {
         >
           <Flex
             as='li'
-            mx={[0, 3]}
-            p={[2, 0]}
           >
             <a href='/about'>About</a>
           </Flex>
         </Flex>
       </Flex>
       <Flex
-        backgroundColor={cssVarColorsNames.backgroundAccent}
-        mr={3}
+        as='button'
         display={['flex', 'none']}
-        onClick={() => toggleHide(!hide)}
+        border={`solid 2px ${cssVarColorsNames.foregroundAccent}`}
+        borderRadius={10}
+        backgroundColor={cssVarColorsNames.backgroundAccent}
         alignItems='center'
+        width={[null, '120px']}
+        justifyContent='space-around'
+        onClick={() => toggleHide(!hide)}
       >
         <BurgerIcon width={24} height={24} />
       </Flex>
@@ -82,12 +81,14 @@ const Menu = () => {
         as='button'
         border={`solid 2px ${cssVarColorsNames.foregroundAccent}`}
         borderRadius={10}
-        mr={3}
         backgroundColor={cssVarColorsNames.backgroundAccent}
         onClick={() => toggleTheme()}
         alignItems='center'
+        width={[null, '120px']}
+        justifyContent='space-around'
+        mx={3}
       >
-        <ThemeTogglerIcon width={24} height={24} /> <Capitalize>{actualTheme}</Capitalize>
+        <ThemeTogglerIcon width={24} height={24} /> <Capitalize display={['none', 'block']}>{actualTheme}</Capitalize>
       </Flex>
     </>
   );

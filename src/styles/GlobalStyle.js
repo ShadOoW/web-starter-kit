@@ -1,6 +1,5 @@
 import { normalize } from 'polished';
 import { createGlobalStyle } from 'styled-components';
-import { dir } from 'lib/styled-components-direction';
 import {
   lineHight, darkColorsTheme, lightColorsTheme, cssVarColorsNames,
 } from './theme';
@@ -86,12 +85,6 @@ const GlobalStyle = createGlobalStyle`
       &:hover {
         background-color: ${cssVarColorsNames.foregroundAccent};
         color: #fff;
-      }
-
-      svg {
-        ${dir`
-          margin-right: ${(props) => props.theme.space[3]};
-        `}
       }
     }
     ul {
