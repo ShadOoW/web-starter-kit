@@ -29,7 +29,7 @@
     "@types/styled-components": "^4.1.18",
     "babel-jest": "^24.9.0",
     "babel-plugin-styled-components": "^1.10.6",
-    "eslint": "^6.1.0",
+    "eslint": "^6.2.1",
     "eslint-config-airbnb": "^18.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
