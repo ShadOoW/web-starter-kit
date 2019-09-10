@@ -17,7 +17,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-smooth-image": "^1.1.0",
-    "rtl-css-js": "^1.13.0",
+    "rtl-css-js": "^1.13.1",
     "styled-components": "^4.3.2",
     "styled-system": "^5.1.0"
   },
