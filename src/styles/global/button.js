@@ -11,7 +11,8 @@ const button = css`
     border-radius: 10px;
     padding: ${(props) => props.theme.space[2]};
 
-    &:hover {
+    &:hover,
+    &.active {
       background-color: ${cssVarColorsNames.foregroundAccent};
       color: #fff;
     }

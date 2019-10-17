@@ -15,13 +15,16 @@ import { H3, Text } from 'typography';
 import { GraphqlDemo } from 'components';
 
 function Home({ t }) {
-  const [direction, setDirection] = useState('ltr');
+  const [language, setLanguage] = useState('');
 
-  useEffect(
-    () =>
-      document.getElementsByTagName('html')[0].setAttribute('dir', direction),
-    [direction],
-  );
+  useEffect(() => setLanguage(i18n.language), [i18n.language]);
+
+  useEffect(() => {
+    if (language.length)
+      document
+        .getElementsByTagName('html')[0]
+        .setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+  }, [language]);
 
   return (
     <Container>
@@ -44,28 +47,22 @@ function Home({ t }) {
         <Flex pt='1rem' justifyContent='space-between' width='25rem'>
           <button
             type='button'
-            onClick={() => {
-              i18n.changeLanguage('en');
-              setDirection('ltr');
-            }}
+            className={language === 'en' ? 'active' : ''}
+            onClick={() => i18n.changeLanguage('en')}
           >
             English
           </button>
           <button
             type='button'
-            onClick={() => {
-              i18n.changeLanguage('fr');
-              setDirection('ltr');
-            }}
+            className={language === 'fr' ? 'active' : ''}
+            onClick={() => i18n.changeLanguage('fr')}
           >
             French
           </button>
           <button
             type='button'
-            onClick={() => {
-              i18n.changeLanguage('ar');
-              setDirection('rtl');
-            }}
+            className={language === 'ar' ? 'active' : ''}
+            onClick={() => i18n.changeLanguage('ar')}
           >
             Arabic
           </button>

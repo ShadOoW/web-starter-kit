@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // Import Components
-import { Spinner } from 'common';
+import { Spinner } from 'common/loader';
 
 // Import Layout
 import { Flex, Block } from 'layout';
@@ -15,21 +15,16 @@ function FilterInput({ onChange, placeholder, isLoading }) {
 
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
-  useEffect(
-    () => {
-      onChange(debouncedSearchTerm);
-    },
-    [debouncedSearchTerm],
-  );
+  useEffect(() => {
+    onChange(debouncedSearchTerm);
+  }, [debouncedSearchTerm]);
 
   return (
-    <Flex
-      position='relative'
-    >
+    <Flex position='relative'>
       <input
         type='text'
         placeholder={placeholder}
-        onChange={(e) => (setSearchTerm(e.target.value))}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
       <Block
         as={Direction}

@@ -14,6 +14,9 @@ const CSS_SCHEMA = {
   dirLeft: 'left',
   dirBorderRight: 'border-right',
   dirMarginRight: 'margin-right',
+  dirMarginLeft: 'margin-left',
+  dirPaddingRight: 'padding-right',
+  dirPaddingLeft: 'padding-left',
 };
 
 const ALLOWED_PROPS = [
@@ -21,17 +24,18 @@ const ALLOWED_PROPS = [
   'dirLeft',
   'dirBorderRight',
   'dirMarginRight',
+  'dirPaddingLeft',
+  'dirPaddingRight',
 ];
 
-const filterProps = (props) => (
+const filterProps = (props) =>
   Object.keys(props)
     .filter((key) => ALLOWED_PROPS.includes(key))
     .reduce((obj, key) => {
       // eslint-disable-next-line no-param-reassign
       obj[CSS_SCHEMA[key]] = props[key];
       return obj;
-    }, {})
-);
+    }, {});
 
 const proccess = (props) => {
   const filtered = filterProps(props);
@@ -46,8 +50,6 @@ const proccess = (props) => {
   };
 };
 
-const Direction = styled('div')(
-  proccess,
-);
+const Direction = styled('div')(proccess);
 
 export default Direction;

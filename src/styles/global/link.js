@@ -8,7 +8,7 @@ const link = css`
   a:focus,
   a:hover,
   a:active {
-    color: ${cssVarColorsNames.foregroundAccent}
+    color: ${cssVarColorsNames.foregroundAccent};
     text-decoration: none;
     cursor: pointer;
   }

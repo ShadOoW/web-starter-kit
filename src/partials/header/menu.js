@@ -11,12 +11,11 @@ import { Direction } from 'utils';
 // Layout
 import { Flex } from 'layout';
 
-// Import Common
-import { Capitalize } from 'common';
+// Import Typography
+import { Text } from 'typography';
 
 // SVG Ions
-import BurgerIcon from './burger.svg';
-import ThemeTogglerIcon from './theme-toggler.svg';
+import { SVGBurger, SVGThemeTogger } from 'common/icons';
 
 const Menu = () => {
   const cookieTheme = parseCookies().theme;
@@ -73,7 +72,7 @@ const Menu = () => {
         justifyContent='space-around'
         onClick={() => toggleHide(!hide)}
       >
-        <BurgerIcon width={24} height={24} />
+        <SVGBurger />
       </Flex>
       <Flex
         as='button'
@@ -82,12 +81,13 @@ const Menu = () => {
         backgroundColor={cssVarColorsNames.backgroundAccent}
         onClick={() => toggleTheme()}
         alignItems='center'
-        width={[null, '120px']}
         justifyContent='space-around'
         mx={3}
       >
-        <ThemeTogglerIcon width={24} height={24} />{' '}
-        <Capitalize display={['none', 'block']}>{actualTheme}</Capitalize>
+        <SVGThemeTogger />
+        <Flex as={Direction} dirPaddingLeft='1rem' display={['none', 'block']}>
+          <Text capitalize>{actualTheme}</Text>
+        </Flex>
       </Flex>
     </>
   );
