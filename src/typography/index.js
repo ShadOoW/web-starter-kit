@@ -49,11 +49,6 @@ const stylesLabel = css`
   line-height: ${(props) => props.theme.lineHeights.h6};
 `;
 
-const stylesHelp = css`
-  border-bottom: 1px dashed ${({ theme }) => theme.colors.action.default};
-  color: ${({ theme }) => theme.colors.action.default};
-`;
-
 export const H1 = styled.h1`
   ${styles}
   ${stylesH1}
@@ -102,6 +97,7 @@ export const Text = styled.span`
   ${({ h3 }) => h3 && stylesH3}
   ${({ h4 }) => h4 && stylesH4}
   ${({ small }) => small && stylesSmall}
-  ${({ bold }) => bold && 'font-weight: bold'}
-  ${({ help }) => help && stylesHelp}
+  ${({ bold }) => bold && 'font-weight: bold;'}
+  ${({ capitalize }) => capitalize && 'text-transform: capitalize;'}
+  $
 `;
