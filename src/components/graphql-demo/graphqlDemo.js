@@ -30,9 +30,7 @@ export const GET_CHARACTERS = `
 function GraphqlDemo() {
   const [searchInputValue, setSearchInputValue] = useState('');
 
-  const {
-    loading, error, data,
-  } = useQuery(GET_CHARACTERS, {
+  const { loading, error, data } = useQuery(GET_CHARACTERS, {
     variables: { name: searchInputValue },
     notifyOnNetworkStatusChange: true,
   });
@@ -47,9 +45,7 @@ function GraphqlDemo() {
         />
       </Block>
 
-      {error && (
-        <Error />
-      )}
+      {error && <Error />}
 
       {!loading && data && data.characters && (
         // results is null, instead of being an empty array :(
@@ -58,7 +54,7 @@ function GraphqlDemo() {
 
       <Flex justifyContent='center' py={[3, 4]}>
         <Block width='50%' maxWidth={300}>
-          <img src='/static/images/placeholder.png' alt='rick and morty' />
+          <img src='/images/placeholder.png' alt='rick and morty' />
         </Block>
       </Flex>
     </Flex>
