@@ -18,21 +18,21 @@ import { Text } from 'typography';
 import { SVGBurger, SVGThemeTogger } from 'common/icons';
 
 const Menu = () => {
-  const cookieTheme = parseCookies().theme;
-
   const [hide, toggleHide] = useState(true);
-  // TODO: Find a way to detect actual theme before initial render
-  const [actualTheme, setActualTheme] = useState(cookieTheme || 'light');
+  const [theme, setTheme] = useState('');
 
   useEffect(() => {
-    setCookie({}, 'theme', actualTheme);
+    const userTheme = parseCookies().theme;
+    setTheme(userTheme || 'light');
+  }, []);
 
-    document.getElementsByTagName('html')[0].className = actualTheme;
-  }, [actualTheme]);
+  useEffect(() => {
+    setCookie({}, 'theme', theme, { path: '/' });
 
-  const toggleTheme = () => {
-    setActualTheme(actualTheme === 'light' ? 'dark' : 'light');
-  };
+    if (document.getElementsByTagName('html')[0].className !== theme) {
+      document.getElementsByTagName('html')[0].className = theme;
+    }
+  }, [theme]);
 
   return (
     <>
@@ -79,14 +79,14 @@ const Menu = () => {
         border={`solid 2px ${cssVarColorsNames.foregroundAccent}`}
         borderRadius={10}
         backgroundColor={cssVarColorsNames.backgroundAccent}
-        onClick={() => toggleTheme()}
+        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         alignItems='center'
         justifyContent='space-around'
         mx={3}
       >
         <SVGThemeTogger />
         <Flex as={Direction} dirPaddingLeft='1rem' display={['none', 'block']}>
-          <Text capitalize>{actualTheme}</Text>
+          <Text capitalize>{theme}</Text>
         </Flex>
       </Flex>
     </>
