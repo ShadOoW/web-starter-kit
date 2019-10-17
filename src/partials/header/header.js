@@ -12,12 +12,7 @@ const Header = () => (
     p={4}
     position='relative'
   >
-    <Flex
-      justifyContent='space-between'
-      width='large'
-      maxWidth='100%'
-      m='auto'
-    >
+    <Flex justifyContent='space-between' width='large' maxWidth='100%' m='auto'>
       <a href='/'>
         <Logo />
       </a>

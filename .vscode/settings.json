@@ -5,5 +5,6 @@
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
   "files.insertFinalNewline": true,
-  "jestrunner.jestCommand": "npm test --"
+  "jestrunner.jestCommand": "npm test --",
+  "prettier-eslint.eslintIntegration": true
 }

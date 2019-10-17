@@ -1,97 +1,93 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
-// i18n Libs
 import { i18n, Link, withTranslation } from 'lib/i18n';
-
-// Layout
-import { Flex, Block, Inline } from 'layout';
 
 // Parials
 import { Header } from 'partials';
 
+// Layout
+import { Container, Content, Flex } from 'layout';
+
+// Typography
+import { H3, Text } from 'typography';
+
 // Components
 import { GraphqlDemo } from 'components';
 
-// Typography
-import { H2 } from 'typography';
-
 function Home({ t }) {
-  const changeDirection = (direction) => {
-    document.getElementsByTagName('html')[0].setAttribute('dir', direction);
-  };
+  const [direction, setDirection] = useState('ltr');
+
+  useEffect(
+    () =>
+      document.getElementsByTagName('html')[0].setAttribute('dir', direction),
+    [direction],
+  );
 
   return (
-    <Flex
-      flexDirection='column'
-    >
+    <Container>
       <Header />
-      <Flex
-        p={[2, 4]}
-        flexDirection='column'
-        alignItems='center'
-        justifyContent='center'
-      >
-        <Block maxWidth='large' width='100%'>
-          <H2>What is this?</H2>
+      <Content>
+        <H3 pb='2rem'>Introduction</H3>
+        <Flex flexDirection='column'>
           <p>
-            This is a demo website, to showcase a nextjs starter kit in action.<br />
-            Read more about it in the <a href='/about'>about page</a>, or on <a href='https://github.com/ShadOoW/web-starter-kit'>github</a>
+            This is a demo website, to showcase a nextjs starter kit in action.
           </p>
-          <H2 pt={[3, 4]}>Translation</H2>
-          <p><span>Text to be translated: </span><b>{t('Hello')}</b></p>
-          <p><span>Current Language: </span><b>{i18n.language}</b></p>
-          <br />
-
-          <div>
-            <div>Left to right:</div>
-            <Inline
-              as='button'
-              type='button'
-              onClick={() => { i18n.changeLanguage('en'); changeDirection('ltr'); }}
-              m={3}
-            >
-              English
-            </Inline>
-            <Inline
-              as='button'
-              type='button'
-              onClick={() => { i18n.changeLanguage('fr'); changeDirection('ltr'); }}
-              m={3}
-            >
-              French
-            </Inline>
-          </div>
-          <div>
-            <div>Right to left:</div>
-            <Inline
-              as='button'
-              type='button'
-              onClick={() => { i18n.changeLanguage('ar'); changeDirection('rtl'); }}
-              m={3}
-            >
-              Arabic
-            </Inline>
-          </div>
-
-          <H2 pt={[3, 4]}>i18n aware Routing</H2>
-
-          A link to navigate to about page,
-          with the current selected language in the URL (language/about)
-          <br />
-
-          <Link href='/about'>
-            <a>This will magically prepend locale subpaths</a>
-          </Link>
-          <H2 pt={[3, 4]}>Rick and Morty</H2>
           <p>
-            This is a demo for apollo and graphql<br />
-            The graphql backend is generously made available by <a href='https://rickandmortyapi.com/'>Axel Fuhrmann</a>
+            Read more about it in the <a href='/about'>about page</a>, or on{' '}
+            <a href='https://github.com/ShadOoW/web-starter-kit'>github</a>
           </p>
-          <GraphqlDemo />
-        </Block>
-      </Flex>
-    </Flex>
+        </Flex>
+        <H3 py='2rem'>Translation / CSS Direction</H3>
+        <Text bold>
+          {i18n.language} - {t('Hello')}
+        </Text>
+        <Flex pt='1rem' justifyContent='space-between' width='25rem'>
+          <button
+            type='button'
+            onClick={() => {
+              i18n.changeLanguage('en');
+              setDirection('ltr');
+            }}
+          >
+            English
+          </button>
+          <button
+            type='button'
+            onClick={() => {
+              i18n.changeLanguage('fr');
+              setDirection('ltr');
+            }}
+          >
+            French
+          </button>
+          <button
+            type='button'
+            onClick={() => {
+              i18n.changeLanguage('ar');
+              setDirection('rtl');
+            }}
+          >
+            Arabic
+          </button>
+        </Flex>
+        <H3 py='2rem'>i18n aware Routing</H3>
+        <Link href='/about'>
+          <a>This link will magically prepend locale subpaths in the url.</a>
+        </Link>
+        <H3 py='2rem'>GraphQl</H3>
+        <Flex flexDirection='column'>
+          <Text>
+            This is a demo for <Text bold>apollo</Text> and{' '}
+            <Text bold>graphql</Text>
+          </Text>
+          <Text>
+            The graphql backend is generously made available by{' '}
+            <a href='https://rickandmortyapi.com/'>Axel Fuhrmann</a>
+          </Text>
+        </Flex>
+        <GraphqlDemo />
+      </Content>
+    </Container>
   );
 }
 

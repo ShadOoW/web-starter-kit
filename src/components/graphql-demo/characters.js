@@ -6,18 +6,16 @@ import Image from 'react-smooth-image';
 // Import Layout
 import { Flex } from 'layout';
 
+// Import Typography
+import { Text } from 'typography';
+
 function Characters({ characters }) {
   if (characters.length === 0) {
-    return (
-      <div>0 Results found :(</div>
-    );
+    return <div>0 Results found :(</div>;
   }
 
   return (
-    <Flex
-      flexWrap='wrap'
-      mx={-2}
-    >
+    <Flex flexWrap='wrap' mx={-2}>
       {characters.map((character) => (
         <Flex
           p={2}
@@ -43,16 +41,13 @@ function Characters({ characters }) {
             opacity={0.8}
             textAlign='center'
           >
-            <h2>
-              {character.name}
-            </h2>
+            <Text bold>{character.name}</Text>
           </Flex>
         </Flex>
       ))}
     </Flex>
   );
 }
-
 
 Characters.propTypes = {
   characters: PropTypes.arrayOf(

@@ -1,9 +1,5 @@
-import Flex from './flex';
-import Inline from './inline';
-import Block from './block';
+import { Flex, Block } from './display';
+import { Container } from './container';
+import { Content } from './content';
 
-export {
-  Flex,
-  Inline,
-  Block,
-};
+export { Flex, Block, Container, Content };

@@ -1,5 +1,3 @@
 import Capitalize from './capitalize';
 
-export {
-  Capitalize,
-};
+export { Capitalize };

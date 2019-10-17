@@ -1,11 +1,31 @@
 export const fontSizeInit = '10px';
 
 export const fontSizeBase = '1.6rem';
-export const fontSizeBig = '1.8rem';
-export const fontSizeSmall = '.875rem';
-export const fontSizeEmph = '1.6rem';
-export const fontSizeH1 = '2.5rem';
-export const fontSizeH2 = '2rem';
+export const lineHeightBase = '2.4rem';
+
+export const fontSizeSmall = '1.4rem';
+export const lineHeightSmall = '1.8rem';
+
+export const fontSizeH1 = '4.4rem';
+export const lineHeightH1 = '4.8rem';
+
+export const fontSizeH2 = '3.6rem';
+export const lineHeightH2 = '4.2rem';
+
+export const fontSizeH3 = '2.2rem';
+export const lineHeightH3 = '3rem';
+
+export const fontSizeH4 = '2rem';
+export const lineHeightH4 = '3rem';
+
+export const fontSizeH5 = fontSizeBase;
+export const lineHeightH5 = lineHeightBase;
+
+export const fontSizeH6 = fontSizeSmall;
+export const lineHeightH6 = lineHeightSmall;
+
+export const fontSizeLabel = fontSizeSmall;
+export const lineHeightLabel = lineHeightSmall;
 
 export const darkBackgroundAccent = '#252627';
 export const darkBackground = '#292a2d';
@@ -55,28 +75,47 @@ export const lightColorsTheme = {
 
 const theme = {
   space: ['0', '.25rem', '.5rem', '1rem', '2rem', '4rem', '8rem'],
-  sizes: { small: 640, medium: 920, large: 1200 },
+  sizes: { small: 640, medium: 920, large: 1200, larger: 1366 },
+  lineHeights: {
+    base: lineHeightBase,
+    small: lineHeightSmall,
+    h1: lineHeightH1,
+    h2: lineHeightH2,
+    h3: lineHeightH3,
+    h4: lineHeightH4,
+    h5: lineHeightH5,
+    h6: lineHeightH6,
+    label: lineHeightLabel,
+  },
   fontSizes: {
     init: fontSizeInit,
     base: fontSizeBase,
-    big: fontSizeBig,
     small: fontSizeSmall,
-    emph: fontSizeEmph,
     h1: fontSizeH1,
     h2: fontSizeH2,
-    h3: fontSizeBig,
-    h4: fontSizeEmph,
-    h5: fontSizeBase,
-    h6: fontSizeSmall,
+    h3: fontSizeH3,
+    h4: fontSizeH4,
+    h5: fontSizeH5,
+    h6: fontSizeH6,
+    label: fontSizeLabel,
   },
   borders: { basic: 'solid .125rem' },
-  breakpoints: [breakpointSmall, breakpointMedium, breakpointLarge, breakpointLarger],
+  breakpoints: [
+    breakpointSmall,
+    breakpointMedium,
+    breakpointLarge,
+    breakpointLarger,
+  ],
   radii: { pill: '9999px' },
   zIndex: 9999,
-  textStyles: {
-    active: {
-      fontSize: fontSizeBig,
-      textTransform: 'uppercase',
+  buttons: {
+    primary: {
+      color: 'white',
+      bg: 'red',
+    },
+    secondary: {
+      color: 'white',
+      bg: 'tomato',
     },
   },
 };

@@ -4,9 +4,9 @@ import Head from 'next/head';
 import { getInitialState } from 'graphql-hooks-ssr';
 import initGraphQL from './init-graphql';
 
-export default App => {
+export default (App) => {
   return class GraphQLHooks extends React.Component {
-    // static displayName = 'GraphQLHooks(App)';
+    static displayName = 'GraphQLHooks(App)';
     static async getInitialProps(ctx) {
       const { Component, router } = ctx;
 

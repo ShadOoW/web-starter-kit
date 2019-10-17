@@ -5,10 +5,8 @@ import { H3 } from 'typography';
 import Cursor from './cursor';
 
 const Logo = () => (
-  <Flex
-    alignItems='center'
-  >
-    <H3>~/web-starter-kit &gt;</H3>
+  <Flex alignItems='center'>
+    <H3>~/starter-kit &gt;</H3>
     <Cursor />
   </Flex>
 );

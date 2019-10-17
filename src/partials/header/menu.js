@@ -57,9 +57,7 @@ const Menu = () => {
           mx={[0, 3]}
           px={[2, 0]}
         >
-          <Flex
-            as='li'
-          >
+          <Flex as='li'>
             <a href='/about'>About</a>
           </Flex>
         </Flex>
@@ -88,7 +86,8 @@ const Menu = () => {
         justifyContent='space-around'
         mx={3}
       >
-        <ThemeTogglerIcon width={24} height={24} /> <Capitalize display={['none', 'block']}>{actualTheme}</Capitalize>
+        <ThemeTogglerIcon width={24} height={24} />{' '}
+        <Capitalize display={['none', 'block']}>{actualTheme}</Capitalize>
       </Flex>
     </>
   );

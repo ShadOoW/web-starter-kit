@@ -1,5 +1,3 @@
 import GraphqlDemo from './graphql-demo';
 
-export {
-  GraphqlDemo,
-};
+export { GraphqlDemo };

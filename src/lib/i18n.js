@@ -8,6 +8,5 @@ module.exports = new NextI18Next({
     fr: 'fr',
     ar: 'ar',
   },
-  localePath: 'public/locales',
   fallbackLng: 'en',
 });
