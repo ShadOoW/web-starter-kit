@@ -1,13 +1,13 @@
-import React from "react";
-import App, { Container } from "next/app";
-import { ThemeProvider } from "styled-components";
-import { ClientContext } from "graphql-hooks";
+import React from 'react';
+import App from 'next/app';
+import { ThemeProvider } from 'styled-components';
+import { ClientContext } from 'graphql-hooks';
 
-import withGraphQLClient from "lib/with-graphql-client";
-import { appWithTranslation } from "lib/i18n";
+import withGraphQLClient from 'lib/with-graphql-client';
+import { appWithTranslation } from 'lib/i18n';
 
-import GlobalStyle from "styles/GlobalStyle";
-import theme from "styles/theme";
+import GlobalStyle from 'styles/GlobalStyle';
+import theme from 'styles/theme';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
