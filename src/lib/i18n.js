@@ -9,4 +9,5 @@ module.exports = new NextI18Next({
     ar: 'ar',
   },
   fallbackLng: 'en',
+  ignoreRoutes: ['/service-worker.js'],
 });
