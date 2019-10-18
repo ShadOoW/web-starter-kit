@@ -2,7 +2,8 @@ const path = require('path');
 const withOffline = require('next-offline');
 
 module.exports = withOffline({
-  generateInDevMode: true,
+  // Set to true to debug service-worker.js
+  generateInDevMode: false,
   env: {
     env: 'dev',
   },

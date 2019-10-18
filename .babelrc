@@ -11,9 +11,7 @@
           }
         ]
       ],
-      "presets": [
-        "next/babel"
-      ]
+      "presets": ["next/babel"]
     },
     "production": {
       "plugins": [
@@ -26,12 +24,12 @@
           }
         ]
       ],
-      "presets": [
-        "next/babel"
-      ]
+      "presets": ["next/babel"]
     }
   },
   "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
     [
       "styled-components",
       {
@@ -41,7 +39,5 @@
       }
     ]
   ],
-  "presets": [
-    "next/babel"
-  ]
+  "presets": ["next/babel"]
 }
