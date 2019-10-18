@@ -4,6 +4,9 @@ import Head from 'next/head';
 import { getInitialState } from 'graphql-hooks-ssr';
 import initGraphQL from './init-graphql';
 
+// Import Utils
+import { isServer } from 'utils';
+
 export default (App) => {
   return class GraphQLHooks extends React.Component {
     static displayName = 'GraphQLHooks(App)';
@@ -19,7 +22,7 @@ export default (App) => {
       // and extract the resulting data
       const graphQLClient = initGraphQL();
       let graphQLState = {};
-      if (typeof window === 'undefined') {
+      if (isServer) {
         try {
           // Run all GraphQL queries
           graphQLState = await getInitialState({
