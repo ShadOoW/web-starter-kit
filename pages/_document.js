@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
 
       const cookies = parseCookies(ctx);
       initialProps.theme = cookies.theme;
-      initialProps.language = cookies['next-i18next'] || 'en';
+      initialProps.language = ctx.req.language;
       initialProps.direction = initialProps.language === 'ar' ? 'rtl' : 'ltr';
 
       return {
