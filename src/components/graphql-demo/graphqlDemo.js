@@ -39,7 +39,7 @@ function GraphqlDemo() {
     <Flex flexDirection='column'>
       <Block py={4} maxWidth='small'>
         <FilterInput
-          placeholder='Filter by name (ex: Rick, Morty, Robot)'
+          placeholder='Filter by name (ex: Rick, Robot)'
           onChange={(value) => setSearchInputValue(value)}
           isLoading={loading}
         />

@@ -9,10 +9,16 @@ const Header = () => (
   <Flex
     bg={cssVarColorsNames.backgroundAccent}
     color={cssVarColorsNames.foregroundAccent}
-    p={4}
+    p={2}
     position='relative'
   >
-    <Flex justifyContent='space-between' width='large' maxWidth='100%' m='auto'>
+    <Flex
+      justifyContent='space-between'
+      alignItems='center'
+      width='larger'
+      maxWidth='100%'
+      m='auto'
+    >
       <a href='/'>
         <Logo />
       </a>

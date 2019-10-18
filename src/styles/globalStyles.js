@@ -1,11 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
-import { reset, init, headings, button, form, link } from './global';
+import { reset, init, headings, form, link } from './global';
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
   ${init}
   ${headings}
-  ${button}
   ${form}
   ${link}
 `;

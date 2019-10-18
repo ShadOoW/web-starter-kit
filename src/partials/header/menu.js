@@ -2,20 +2,20 @@
 import React, { useState, useEffect } from 'react';
 import { parseCookies, setCookie } from 'nookies';
 
-// Theme
+// Import Theme
 import { cssVarColorsNames } from 'styles/theme';
 
-// Utils
+// Import Utils
 import { Direction } from 'utils';
 
-// Layout
+// Import Layout
 import { Flex } from 'layout';
 
-// Import Typography
-import { Text } from 'typography';
-
-// SVG Ions
+// Import Icons
 import { SVGBurger, SVGThemeTogger } from 'common/icons';
+
+// Import Common
+import { Button } from 'common/button';
 
 const Menu = () => {
   const [hide, toggleHide] = useState(true);
@@ -42,10 +42,10 @@ const Menu = () => {
         bg={cssVarColorsNames.backgroundAccent}
         display={[hide ? 'none' : 'flex', 'flex']}
         position={['absolute', 'relative']}
-        top={[70, 0]}
+        top={['4.8rem', 0]}
         dirRight='0'
         dirBorderRight='1px solid'
-        dirMarginRight='1rem'
+        dirMarginRight='.5rem'
         p={[3, 0]}
       >
         <Flex
@@ -61,34 +61,23 @@ const Menu = () => {
           </Flex>
         </Flex>
       </Flex>
-      <Flex
-        as='button'
+      <Button
+        size='small'
         display={['flex', 'none']}
-        border={`solid 2px ${cssVarColorsNames.foregroundAccent}`}
-        borderRadius={10}
-        backgroundColor={cssVarColorsNames.backgroundAccent}
-        alignItems='center'
-        width={[null, '120px']}
-        justifyContent='space-around'
+        aria-label='Navigation Menu'
         onClick={() => toggleHide(!hide)}
       >
         <SVGBurger />
-      </Flex>
-      <Flex
-        as='button'
-        border={`solid 2px ${cssVarColorsNames.foregroundAccent}`}
-        borderRadius={10}
-        backgroundColor={cssVarColorsNames.backgroundAccent}
+      </Button>
+      <Button
+        as={Direction}
+        dirMarginRight='1rem'
+        size='small'
+        aria-label='Theme Toggler'
         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-        alignItems='center'
-        justifyContent='space-around'
-        mx={3}
       >
         <SVGThemeTogger />
-        <Flex as={Direction} dirPaddingLeft='1rem' display={['none', 'block']}>
-          <Text capitalize>{theme}</Text>
-        </Flex>
-      </Flex>
+      </Button>
     </>
   );
 };

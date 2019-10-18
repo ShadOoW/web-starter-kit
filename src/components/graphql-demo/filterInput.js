@@ -25,15 +25,16 @@ function FilterInput({ onChange, placeholder, isLoading }) {
         type='text'
         placeholder={placeholder}
         onChange={(e) => setSearchTerm(e.target.value)}
+        aria-label='Search'
       />
       <Block
         as={Direction}
         position='absolute'
-        top={8}
+        top='.8rem'
         display={isLoading ? 'block' : 'none'}
-        width={24}
-        height={24}
-        dirRight={4}
+        width='2.4rem'
+        height='2.4rem'
+        dirRight='1.5rem'
       >
         <Spinner />
       </Block>

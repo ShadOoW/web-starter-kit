@@ -1,3 +1,5 @@
+import { invert } from 'polished';
+
 export const fontSizeInit = '10px';
 
 export const fontSizeBase = '1.6rem';
@@ -27,16 +29,12 @@ export const lineHeightH6 = lineHeightSmall;
 export const fontSizeLabel = fontSizeSmall;
 export const lineHeightLabel = lineHeightSmall;
 
-export const darkBackgroundAccent = '#252627';
-export const darkBackground = '#292a2d';
-export const darkForeground = '#a9a9b3';
+export const backgroundAccent = '#f4f6fb';
+export const background = '#fafafa';
+export const foreground = '#041133';
 
-export const lightBackgroundAccent = '#fafafa';
-export const lightBackground = '#fff';
-export const lightForeground = '#222';
-
-export const foregroundAccent = '#00afc7';
-export const foregroundError = '#F45B69';
+export const foregroundAccent = '#02c39a';
+export const foregroundError = '#f45b69';
 
 export const breakpointLarger = '1201px';
 export const breakpointLarge = '1200px';
@@ -51,23 +49,21 @@ export const cssVarColorsNames = {
   foregroundError: 'var(--color-foregroundError)',
 };
 
-export const lineHight = 1.54;
-
 export const darkColorsTheme = {
   colors: {
-    background: darkBackground,
-    backgroundAccent: darkBackgroundAccent,
-    foreground: darkForeground,
-    foregroundAccent,
+    background: invert(background),
+    backgroundAccent: invert(backgroundAccent),
+    foreground: invert(foreground),
+    foregroundAccent: invert(foregroundAccent),
     foregroundError,
   },
 };
 
 export const lightColorsTheme = {
   colors: {
-    background: lightBackground,
-    backgroundAccent: lightBackgroundAccent,
-    foreground: lightForeground,
+    background,
+    backgroundAccent,
+    foreground,
     foregroundAccent,
     foregroundError,
   },
