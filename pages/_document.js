@@ -75,6 +75,17 @@ export default class MyDocument extends Document {
             content='width=device-width, initial-scale=1.0'
           />
 
+          <meta property='og:title' content='Web Starter Kit' />
+          <meta property='og:type' content='website' />
+          <meta
+            property='og:url'
+            content='http://web-starter-kit-nextjs.herokuapp.com'
+          />
+          <meta
+            property='og:image'
+            content='https://image.slidesharecdn.com/finaljasdeep-170405154955/95/nextjs-in-production-by-jasdeep-lalli-1-638.jpg?cb=1491407432'
+          />
+
           <meta
             name='description'
             content='An opinionated starter kit with styled-system, graphql-hooks and nextjs.'
