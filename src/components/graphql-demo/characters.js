@@ -26,7 +26,7 @@ function Characters({ characters }) {
           <Image
             src={character.image}
             alt={character.name}
-            transitionTime={0.15}
+            transitionTime={0}
           />
 
           <Flex

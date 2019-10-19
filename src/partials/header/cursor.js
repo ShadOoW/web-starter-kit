@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import styled, { keyframes } from 'styled-components';
 
 import { cssVarColorsNames } from 'styles/theme';
