@@ -25,6 +25,11 @@ function Input({ onChange, placeholder, isLoading }) {
         type='text'
         placeholder={placeholder}
         onChange={(e) => setSearchTerm(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            e.target.blur();
+          }
+        }}
         aria-label='Search'
       />
       <Block
