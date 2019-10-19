@@ -16,10 +16,14 @@ const FlexButton = styled.button`
   border: solid 2px ${cssVarColorsNames.foregroundAccent};
   background: none;
 
-  &:hover,
-  &.active {
+  &:hover:enabled,
+  &.active:enabled {
     background-color: ${cssVarColorsNames.foregroundAccent};
     color: ${cssVarColorsNames.background};
+  }
+
+  &:disabled {
+    opacity: 0.5;
   }
 `;
 
