@@ -20,7 +20,6 @@ const pulse = keyframes`
 const Placeholder = styled.div`
   animation: ${pulse} 5s 1 forwards;
   width: 100%;
-  max-width: 30rem;
   height: 0;
   box-sizing: content-box;
   padding-bottom: 100%;
