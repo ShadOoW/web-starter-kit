@@ -21,13 +21,13 @@ const StyledSpinner = styled.svg`
   animation: rotate 2s linear infinite;
   width: inherit;
   height: inherit;
-  
+
   & .path {
     stroke: ${cssVarColorsNames.foregroundAccent};
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }
-  
+
   @keyframes rotate {
     100% {
       transform: rotate(360deg);
