@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { space, typography, color, size } from 'styled-system';
+import { cssVarColorsNames } from 'styles/theme';
 
 const styles = css`
   ${space}
@@ -97,6 +98,7 @@ export const Text = styled.span`
   ${({ h3 }) => h3 && stylesH3}
   ${({ h4 }) => h4 && stylesH4}
   ${({ small }) => small && stylesSmall}
+  ${({ error }) => error && `color: ${cssVarColorsNames.foregroundError};`}
   ${({ bold }) => bold && 'font-weight: bold;'}
   ${({ capitalize }) => capitalize && 'text-transform: capitalize;'}
   $

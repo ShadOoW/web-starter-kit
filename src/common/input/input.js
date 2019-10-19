@@ -10,7 +10,7 @@ import { Flex, Block } from 'layout';
 // Import Utils
 import { useDebounce, Direction } from 'utils';
 
-function FilterInput({ onChange, placeholder, isLoading }) {
+function Input({ onChange, placeholder, isLoading }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
@@ -42,15 +42,15 @@ function FilterInput({ onChange, placeholder, isLoading }) {
   );
 }
 
-FilterInput.defaultProps = {
+Input.defaultProps = {
   placeholder: '',
   isLoading: false,
 };
 
-FilterInput.propTypes = {
+Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   isLoading: PropTypes.bool,
 };
 
-export default FilterInput;
+export default Input;

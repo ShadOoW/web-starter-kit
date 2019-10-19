@@ -5,12 +5,16 @@ import { useQuery } from 'graphql-hooks';
 // Import Layout
 import { Flex, Block } from 'layout';
 
+// Import Typography
+import { Text } from 'typography';
+
+// Import Common components
+import { Input } from 'common/input';
+import { Pagination } from 'common/pagination';
+
 // Import Sub Components
-import FilterInput from './filterInput';
 import Characters from './characters';
 import Placeholders from './placeholders';
-import Pagination from './pagination';
-import Error from './error';
 
 // https://rickandmortyapi.com/documentation/#character
 export const GET_CHARACTERS = `
@@ -45,14 +49,18 @@ function GraphqlDemo() {
   return (
     <Flex flexDirection='column'>
       <Block pt='1rem' maxWidth='small'>
-        <FilterInput
+        <Input
           placeholder='Filter by name (ex: Rick, Robot)'
           onChange={(value) => setSearchInputValue(value)}
           isLoading={loading}
         />
       </Block>
 
-      {error && <Error />}
+      {error && (
+        <Text py='2rem' error>
+          Error: something bad happened with graphql, check console for errors
+        </Text>
+      )}
 
       {!loading && data && data.characters && (
         <Flex flexDirection='column'>
@@ -76,7 +84,7 @@ function GraphqlDemo() {
         </Block>
       )}
 
-      <Flex justifyContent='center' py={[3, 4]}>
+      <Flex justifyContent='center' pt={['1rem', '2rem']}>
         <Block width='50%' maxWidth='30rem'>
           <img src='/images/placeholder.png' alt='rick and morty' />
         </Block>
