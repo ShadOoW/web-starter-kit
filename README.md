@@ -12,3 +12,6 @@
 </p>
 
 <h3><a href="https://web-starter-kit-nextjs.herokuapp.com/" alt="Heroku">Demo</a></h3>
+
+<h3>Mobx</h3>
+Implemented based on this repo <a href="https://github.com/borekb/nextjs-with-mobx">nextjs-with-mobx</a>
