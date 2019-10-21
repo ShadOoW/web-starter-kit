@@ -19,7 +19,7 @@ A starter kit for a next js project.
 
 ## Motivation
 
-I love react, but I also love pages that load fast (static sites), this is my attempt at getting the best of both words (or as much as possible).
+I love react, but I also love pages that load fast (static sites), this is my attempt at getting the best of both worlds (or as much as possible).
 
 Enter nextjs with SSR and Hydration.
 [Read More](https://medium.com/better-programming/next-js-react-server-side-rendering-done-right-f9700078a3b6) if you are unfamiliar with the idea.
@@ -67,9 +67,9 @@ This technique also supports media queries.
 </div>
 ```
 
-This is usually possible, because media queries are usually standardized by most designers.
+This is possible, because media queries are usually standardized by most designers.
 
-Finally if for some reason something can't be atomic, then you can always use good old css, because atomic css will improve performance as long as the property is used more that twice in the website, you can also mix and match `<div class='menu flex'>`
+Finally if for some reason something can't be atomic, then you can always use good old css, because atomic css will improve performance as long as the property is used twice or more in the same page, you can also mix and match `<div class='menu flex'>`
 
 ```CSS
 .flex{display:flex}
