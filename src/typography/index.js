@@ -101,5 +101,8 @@ export const Text = styled.span`
   ${({ error }) => error && `color: ${cssVarColorsNames.foregroundError};`}
   ${({ bold }) => bold && 'font-weight: bold;'}
   ${({ capitalize }) => capitalize && 'text-transform: capitalize;'}
-  $
+  ${({ breakAll }) => breakAll && 'word-break: break-all;'}
+  ${({ ellipsis }) =>
+    ellipsis &&
+    'white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'}
 `;
