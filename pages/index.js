@@ -20,7 +20,7 @@ import { H3, Text } from 'typography';
 import { Button } from 'common/button';
 
 // Components
-import { GraphqlDemo } from 'components';
+import { GraphqlDemo, HTTPDemo } from 'components';
 
 function Home({ t, language }) {
   const { languageService } = useMobxServices();
@@ -75,6 +75,17 @@ function Home({ t, language }) {
           <Link href='/about'>
             <a>This link will magically prepend locale subpaths in the url.</a>
           </Link>
+          <H3 py='2rem'>Mobx & REST</H3>
+          <Flex flexDirection='column'>
+            <Text>
+              This is a demo to show how to create a <Text bold>mobx</Text>{' '}
+              service to retrieve data from a <Text bold>REST Api</Text> and
+              generate <Text bold>computed</Text> states based on it.
+              <br />
+              The last 30 commits of this repository.
+            </Text>
+            <HTTPDemo />
+          </Flex>
           <H3 py='2rem'>GraphQl</H3>
           <Flex flexDirection='column'>
             <Text>
@@ -93,8 +104,9 @@ function Home({ t, language }) {
   );
 }
 
-Home.getInitialProps = async ({ req }) => {
+Home.getInitialProps = async ({ mobxServices, req }) => {
   const currentLanguage = req ? req.language : i18n.language;
+  await mobxServices.githubService.fetch();
   return {
     language: currentLanguage,
     namespacesRequired: ['common'],

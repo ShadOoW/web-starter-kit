@@ -14,8 +14,8 @@ class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
-    // On server-side, this runs once and creates new stores
-    // On client-side, this always reuses existing stores
+    // On server-side, this runs once and creates new services
+    // On client-side, this always reuses existing services
 
     const cookies = parseCookies(ctx);
 
@@ -23,17 +23,18 @@ class MyApp extends App {
       language: cookies['next-i18next'] || i18n.language,
     });
 
-    // Make stores available to page's `getInitialProps`
-    ctx.mobxStores = mobxServices;
+    // Make services available to page's `getInitialProps`
+    ctx.mobxServices = mobxServices;
 
     // Call "super" to run page's `getInitialProps`
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    // Gather serialization-friendly data from stores
+    // Gather serialization-friendly data from services
     const initialData = {
       language: mobxServices.languageService.data(),
+      github: mobxServices.githubService.data(),
     };
 
     // Pass initialData to render
@@ -43,17 +44,17 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, graphQLClient, initialData } = this.props;
 
-    // During SSR, this will create new store instances so having `initialData` is crucial.
+    // During SSR, this will create new Service instances so having `initialData` is crucial.
     // During the client-side hydration, same applies.
-    // From then on, calls to `getStores()` return existing instances.
-    const stores = getServices(initialData);
+    // From then on, calls to `getServices()` return existing instances.
+    const services = getServices(initialData);
 
     return (
       <ThemeProvider theme={theme}>
         <>
           <GlobalStyles />
           <ClientContext.Provider value={graphQLClient}>
-            <ServiceProvider value={stores}>
+            <ServiceProvider value={services}>
               <Component {...pageProps} />
             </ServiceProvider>
           </ClientContext.Provider>
