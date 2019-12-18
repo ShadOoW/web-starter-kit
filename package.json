@@ -23,7 +23,7 @@
     "react-smooth-image": "^1.1.0",
     "rtl-css-js": "^1.13.1",
     "styled-components": "^4.4.1",
-    "styled-system": "^5.1.2"
+    "styled-system": "^5.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
