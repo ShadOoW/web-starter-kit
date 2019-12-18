@@ -9,7 +9,7 @@ class GithubService {
 
   @observable isLoaded = false;
 
-  @observable hasError = true;
+  @observable hasError = false;
 
   constructor(
     initialData = { response: [], isLoaded: false, hasError: false },

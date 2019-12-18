@@ -7,7 +7,7 @@ class LanguageService {
 
   constructor(initialData = '') {
     if (initialData) {
-      this.language = initialData;
+      this.language = initialData.language;
     }
   }
 
