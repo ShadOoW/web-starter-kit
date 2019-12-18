@@ -24,7 +24,7 @@ I love react, but I also love pages that load fast (static sites), this is my at
 Enter nextjs with SSR and Hydration.
 [Read More](https://medium.com/better-programming/next-js-react-server-side-rendering-done-right-f9700078a3b6) if you are unfamiliar with the idea.
 
-Note that for maximum performance, you may want to look at [Partial hydration](https://medium.com/@luke_schmuke/how-we-achieved-the-best-web-performance-with-partial-hydration-20fab9c808d5) techniques.
+Note that for maximum performance, you may want to look at [Partial hydration](https://medium.com/@luke_schmuke/how-we-achieved-the-best-web-performance-with-partial-hydration-20fab9c808d5) techniques, and remove some dependencies.
 
 ## CSS
 
@@ -39,6 +39,7 @@ One good news though is that not every website needs aggressive CSS optimization
 Many patterns have emerged to solve this fundamental struggle:
 
 ### Atomic CSS (ex: [https://acss.io/](https://acss.io))
+
 This technique is one of the best when writing CSS as CSS, by creating a class for each CSS property, we can reuse code everywhere, it also improves readability of HTML
 
 ```HTML
@@ -92,13 +93,14 @@ On the topic of optimization/maintainability, CSS in JS can lead to some bad cod
 CSS in JS, is not just about writing css in a javascript file, it is a new way of thinking that opens new possibilities, and this is the reason it is worth the effort to learn, once our CSS becomes Javascript, anything is possible (imagine sass's varibles/mixins but even better). Instead of just writing our CSS and Component as 2 independent blocks of code, we can make our CSS fully part of the components by taking advantage of component's props, default props, typechecking and so on....
 
 What if instead of doing this:
+
 ```JSX
 import styled from 'styled-components';
 
 const Box = styled.button`
     display: flex;
-    alignItems: center;
-    justifyContent: center;
+    align-items: center;
+    justify-content: center;
     padding: 0 2rem;
 `
 const MyComponent = () =>
@@ -106,6 +108,7 @@ const MyComponent = () =>
 ```
 
 We did this:
+
 ```JSX
 import { Flex }  from 'layout';
 
@@ -127,6 +130,7 @@ const MyComponent = () =>
 ```
 
 Styled system can also handle variants.
+
 ```JSX
 import { Button }  from 'common';
 
@@ -138,7 +142,6 @@ const MyComponent = () =>
 
 I initially had some reserve toward CSS in JS, that made me want to stick to my battle tested patterns, but after I discovered Style System, I managed to overcome all my initial assumptions and I came to realize the benefits and especially the potential of this new approach, I hope I was able to share with you some of my enthusiasm.
 
-
 ### Mobx
 
 Implemented based on this repo <a href="https://github.com/borekb/nextjs-with-mobx">nextjs-with-mobx</a>
@@ -146,9 +149,11 @@ Implemented based on this repo <a href="https://github.com/borekb/nextjs-with-mo
 Work in Progress...
 
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
