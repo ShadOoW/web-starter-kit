@@ -38,7 +38,7 @@ class GithubService {
   }
 
   @action showMore() {
-    this.page = this.page + 1;
+    this.page += 1;
   }
 
   @computed get canShowMore() {
