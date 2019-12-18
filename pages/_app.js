@@ -35,6 +35,7 @@ class MyApp extends App {
     const initialData = {
       language: mobxServices.languageService.data(),
       github: mobxServices.githubService.data(),
+      readme: mobxServices.readmeService.data(),
     };
 
     // Pass initialData to render

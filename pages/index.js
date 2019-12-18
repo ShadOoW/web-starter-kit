@@ -22,7 +22,7 @@ import { Button } from 'common/button';
 // Components
 import { GraphqlDemo, HTTPDemo } from 'components';
 
-function Home({ t, language }) {
+function HomePage({ t, language }) {
   const { languageService } = useMobxServices();
 
   return (
@@ -40,7 +40,7 @@ function Home({ t, language }) {
               action.
             </p>
             <p>
-              Read more about it in the <a href='/about'>about page</a>, or on{' '}
+              Read more about it in the <a href='/readme'>readme page</a>, or on{' '}
               <a href='https://github.com/ShadOoW/web-starter-kit'>github</a>
             </p>
           </Flex>
@@ -72,7 +72,7 @@ function Home({ t, language }) {
             </Button>
           </Flex>
           <H3 py='2rem'>i18n aware Routing</H3>
-          <Link href='/about'>
+          <Link href='/readme'>
             <a>This link will magically prepend locale subpaths in the url.</a>
           </Link>
           <H3 py='2rem'>Mobx & REST</H3>
@@ -104,7 +104,7 @@ function Home({ t, language }) {
   );
 }
 
-Home.getInitialProps = async ({ mobxServices, req }) => {
+HomePage.getInitialProps = async ({ mobxServices, req }) => {
   const currentLanguage = req ? req.language : i18n.language;
   await mobxServices.githubService.fetch();
   return {
@@ -113,9 +113,9 @@ Home.getInitialProps = async ({ mobxServices, req }) => {
   };
 };
 
-Home.propTypes = {
+HomePage.propTypes = {
   t: PropTypes.func.isRequired,
   language: PropTypes.string.isRequired,
 };
 
-export default withTranslation('common')(observer(Home));
+export default withTranslation('common')(observer(HomePage));

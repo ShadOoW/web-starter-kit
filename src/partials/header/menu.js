@@ -57,7 +57,7 @@ const Menu = () => {
           px={[2, 0]}
         >
           <Flex as='li'>
-            <a href='/about'>About</a>
+            <a href='/readme'>Readme</a>
           </Flex>
         </Flex>
       </Flex>
