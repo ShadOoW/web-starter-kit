@@ -11,15 +11,43 @@ import { cssVarColorsNames } from 'styles/theme';
 import { Block } from 'layout';
 
 const MarkdownStyle = styled(Block)`
+  padding-top: 2rem;
+
   pre {
-    padding: 1rem 2rem;
+    padding: 0.5rem;
+    overflow-x: auto;
     border: 1px solid ${cssVarColorsNames.foregroundAccent};
     background: ${cssVarColorsNames.backgroundAccent};
+
+    @media (min-width: ${(props) => props.theme.sizes.medium}px) {
+      padding: 1rem 2rem;
+    }
   }
 
-  img {
-    height: 40px;
-    width: initial;
+  .shields {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      padding: 1rem 0;
+
+      img {
+        width: 20rem;
+      }
+    }
+
+    @media (min-width: ${(props) => props.theme.sizes.small}px) {
+      flex-direction: row;
+
+      a {
+        padding: 0 1rem;
+
+        img {
+          height: 40px;
+          width: initial;
+        }
+      }
+    }
   }
 
   h1,

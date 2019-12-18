@@ -1,4 +1,4 @@
-<p align="center">
+<p class='shields' align="center">
   <!-- https://shields.io/ -->
   <a
     href="https://circleci.com/gh/ShadOoW/web-starter-kit/tree/master"
