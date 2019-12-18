@@ -26,10 +26,10 @@ class GithubService {
     this.hasError = false;
     this.page = 1;
 
-    const res = await fetch(
+    const resp = await fetch(
       'https://api.github.com/repos/ShadOoW/web-starter-kit/commits',
     );
-    this.response = await res.json();
+    this.response = await resp.json();
     if (this.response.constructor === Array) {
       this.isLoaded = true;
     } else {

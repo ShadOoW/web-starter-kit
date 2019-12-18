@@ -46,12 +46,14 @@ function HTTPDemo() {
         ))}
 
       {githubService.isLoaded && githubService.canShowMore && (
-        <Button
-          onClick={() => githubService.showMore()}
-          aria-label='Show More Commits'
-        >
-          Show More
-        </Button>
+        <Flex justifyContent={['center', 'flex-start']}>
+          <Button
+            onClick={() => githubService.showMore()}
+            aria-label='Show More Commits'
+          >
+            Show More
+          </Button>
+        </Flex>
       )}
 
       {githubService.hasError && (
