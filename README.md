@@ -7,8 +7,10 @@
   <a href="https://web-starter-kit-nextjs.herokuapp.com/" alt="Heroku">
     <img src="https://img.shields.io/badge/heroku-up-brightgreen.svg?style=for-the-badge&logo=heroku" />
   </a>
-
-  <img src="https://img.shields.io/github/package-json/dependency-version/ShadOoW/web-starter-kit/next?style=for-the-badge" />
+  <!-- http://heroku-shields.herokuapp.com/ -->
+  <a href="#">
+    <img src="https://img.shields.io/github/package-json/dependency-version/ShadOoW/web-starter-kit/next?style=for-the-badge" />
+  </a>
 </p>
 
 <h3><a href="https://web-starter-kit-nextjs.herokuapp.com/" alt="Heroku">Demo</a></h3>
