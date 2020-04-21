@@ -55,7 +55,7 @@
     "jest": "^24.9.0",
     "jest-fetch-mock": "^3.0.1",
     "jest-styled-components": "^7.0.0",
-    "lint-staged": "^9.5.0",
+    "lint-staged": "^10.1.7",
     "react-svg-loader": "^3.0.3"
   },
   "scripts": {
