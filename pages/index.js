@@ -4,6 +4,9 @@ import { i18n, Link, withTranslation } from 'lib/i18n';
 import { observer } from 'mobx-react';
 import Head from 'next/head';
 
+// https://github.com/mobxjs/mobx-react-lite/#observer-batching
+import 'mobx-react-lite/batchingForReactDom'
+
 // Services
 import { useMobxServices } from 'services';
 
