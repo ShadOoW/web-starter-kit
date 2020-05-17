@@ -13,7 +13,7 @@
     "mobx-react": "^6.2.2",
     "mobx-react-lite": "^2.0.7",
     "next": "^9.3.6",
-    "next-i18next": "^4.4.1",
+    "next-i18next": "^4.4.2",
     "next-offline": "^5.0.2",
     "nookies": "^2.3.0",
     "polished": "^3.6.2",
