@@ -10,4 +10,5 @@ module.exports = new NextI18Next({
   },
   fallbackLng: 'en',
   ignoreRoutes: ['/service-worker.js'],
+  localePath: typeof window === 'undefined' ? 'public/locales' : 'locales',
 });
