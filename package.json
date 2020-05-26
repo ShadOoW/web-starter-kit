@@ -23,7 +23,7 @@
     "react-markdown": "^4.3.1",
     "react-smooth-image": "^1.1.0",
     "rtl-css-js": "^1.14.0",
-    "styled-components": "^5.1.0",
+    "styled-components": "^5.1.1",
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
