@@ -19,6 +19,10 @@
   <a href="#" aria-label="Not a real link">
     <img alt="Current version of NextJs" src="https://img.shields.io/github/package-json/dependency-version/ShadOoW/web-starter-kit/next?style=for-the-badge" />
   </a>
+  <!-- https://dependabot.com/ -->
+  <a href="https://dependabot.com/" aria-label="Not a real link">
+    <img alt="Current version of NextJs" src="https://api.dependabot.com/badges/status?host=github&repo=ShadOoW/web-starter-kit" />
+  </a>
 </p>
 
 <h3><a href="https://web-starter-kit-nextjs.herokuapp.com/" alt="Heroku">Demo</a></h3>
