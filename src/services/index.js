@@ -34,9 +34,9 @@ const ServiceProvider = ({ value, children }) => (
 
 ServiceProvider.propTypes = {
   value: PropTypes.shape({
-    languageService: PropTypes.object.isRequired,
-    githubService: PropTypes.object.isRequired,
-    readmeService: PropTypes.object.isRequired,
+    languageService: PropTypes.shape.isRequired,
+    githubService: PropTypes.shape.isRequired,
+    readmeService: PropTypes.shape.isRequired,
   }).isRequired,
   children: PropTypes.node.isRequired,
 };
